@@ -26,7 +26,7 @@ module.exports = {
       const id = args[0];
       const page = args[1];
       
-      const url1 = `https://hentaifox.com/${id}/`;
+      const url1 = `https://hentaifox.com/gallery/${id}/`;
       const getresponse = await axios.get(url1);
       const gresponse = getresponse.data;
       const $gallery = cheerio.load(gresponse);
@@ -37,7 +37,7 @@ module.exports = {
         return;
       }
 
-      const url2 = `https://hentaifox.com/${id}/${page}/`;
+      const url2 = `https://hentaifox.com/g/${id}/${page}/`;
       const getpage2 = await axios.get(url2);
       const getpage = getpage2.data;
       const $image = cheerio.load(getpage);
