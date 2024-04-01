@@ -8,7 +8,7 @@ module.exports = {
   config: {
     name: "imagine2",
     aliases: ["im2"],
-    author: "Luis Lavigne ",
+    author: "Luis Lavigne",
     version: "1.0",
     countDown: 0,
     role: 0,
@@ -22,7 +22,7 @@ module.exports = {
 
   langs: {
     en: {
-      loading: "⌛ | generating your Imagination...",
+      loading: "🤡 | Generating image, please wait...",
       error: "🤡 | An error occurred, please try again later"
     }
   },
@@ -32,7 +32,7 @@ module.exports = {
 
     const info = args.join(" ");
     if (!info) {
-      return message.reply(`🤡 | baka type your imagination!`);
+      return message.reply(`🤡 | baka, type your imagination!`);
     } else {
       const msg = info.split("|");
       const text = msg[0];
@@ -40,7 +40,7 @@ module.exports = {
       const timestamp = new Date().getTime();
 
       try {
-        let msgSend = message.reply(getLang("🤡 | loading"));
+        let msgSend = message.reply(getLang("loading"));
         const { data } = await axios.get(
           `${global.api.samirApi}/sdxl/generate?prompt=${text}&model=${model}`
         );
@@ -60,7 +60,7 @@ module.exports = {
         }
       } catch (err) {
         console.error(err);
-        return message.reply(getLang("🤡 | error"));
+        return message.reply(getLang("error"));
       }
     }
   }
@@ -79,4 +79,4 @@ function getModelName(model) {
     case '9': return "turbovisionXL";
     default: return "animagineXL";
   }
-    }
+          }
