@@ -14,7 +14,7 @@ module.exports = {
     }
   },
 
-onStart: async function ({ api, event, args, getLang, message, usersData });
+onStart: async function ({ api, event, args, getLang, message, usersData }) },
 onChat: async function({ event, message, getLang }) {
  if (event.body && event.body.toLowerCase() === "music") {
     try {
