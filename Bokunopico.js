@@ -39,7 +39,7 @@ module.exports = {
         return message.reply("🦊 | Invalid ratio format. Please use 'width:height' (e.g., '16:9')");
       }
       const modelParam = '1'; // Utilisation du premier modèle uniquement
-      const apiUrl = `https://rehatdesu.xyz/api/sdxl?prompt=${prompt}&model=${modelParam}&width=${width}&height=${height}`;
+      const apiUrl = `https://rehatdesu.xyz/api/imagine/sdxl?prompt=${prompt}&model=${modelParam}&width=${width}&height=${height}`;
 
       await message.reply('⌛ | Creating your Imagination...');
 
